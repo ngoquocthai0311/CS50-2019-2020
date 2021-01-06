@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+        {% for each in userInfo %}
+            <tr>
+                <td>{{ each["symbol"] }}</td>
+                <td>{{ each["name"] }}</td>
+                <td>{{ each["shares"] }}</td>
+                <td>{{ each["price"] | usd}}</td>
+                <td>{{ each["total"] | usd}}</td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td>CASH</td>
+            <td colspan = "3"></td>
+            <td>{{ (defaultCash - currentTotal) | usd}}</td>
+        </tr>
+        <tr>
+            <td colspan="4"></td>
+            <td>{{defaultCash | usd}}</td>
+        </tr>
+    </table>
+{% endblock %}

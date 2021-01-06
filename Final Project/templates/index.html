@@ -1,0 +1,15 @@
+{% extends "layout.html" %} {% block title %} Home {% endblock %} {% block main
+%}
+<div class="jumbotron">
+  <h1 class="display-4">Hello, {{user_name}}!</h1>
+  <p class="lead">
+    This is a simple password manager web app and also for a final project on CS50
+  </p>
+  <hr class="my-4" />
+  <p>
+    Do you want to use it? Go ahead, click add to add a new password and click view to see all your saved passwords
+  </p>
+  <a class="btn btn-primary btn-lg" href="/add" role="button">Add new password</a>
+  <a class="btn btn-primary btn-lg" href="/broad" role="button">View all passwords</a>
+</div>
+{% endblock %}

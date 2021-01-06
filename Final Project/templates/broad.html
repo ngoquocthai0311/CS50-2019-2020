@@ -1,0 +1,65 @@
+{% extends "layout.html" %} {% block title %} Broad {% endblock %} {% block main
+%}
+<div id="accordion" class="w-50 container">
+  {% if not list %}
+  <div class="card container" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Oops! Look like there is something wrong</h5>
+      <p class="card-text">Please add more passwords to view the broad</p>
+      <a href="/add" class="btn btn-primary">Let's add more passwords!</a>
+    </div>
+  </div>
+  {% endif %}
+
+  {% for each in list %}
+  <div class="card">
+    <div class="card-header" id="heading{{loop.index}}">
+      <h5 class="mb-0">
+        <button
+          class="btn btn-link collapsed"
+          data-toggle="collapse"
+          data-target="#collapse{{loop.index}}"
+          aria-expanded="false"
+          aria-controls="collapse{{loop.index}}"
+        >
+          Password Number {{loop.index}}
+        </button>
+      </h5>
+    </div>
+    <div
+      id="collapse{{loop.index}}"
+      class="collapse"
+      aria-labelledby="heading{{loop.index}}"
+      data-parent="#accordion"
+    >
+      <div class="card-body">
+        <h5 class="card-title">{{each[1]}}</h5>
+        <p class="card-text">
+            Account: {{each[2]}}    
+        </p>
+        <p class="card-text">
+            Password: {{each[3]}}
+        </p>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <a href="{{each[4]}}" class="btn btn-primary" target="_blank">Go to the website</a> 
+                </div>
+                <div class="col">
+                    <form method="POST" action="/update">
+                        <button type="submit" class="btn btn-info" name="password_info" value="{{each[2]}} {{each[1]}}">Update</button>
+                    </form>
+                </div>
+                <div class="col">
+                    <form method="POST" action="/broad" class="container" >                        
+                        <button type="submit" class="btn btn-danger" name="password_info" value="{{each[2]}} {{each[1]}}" >Delete</button>
+                    </form>   
+                </div>                
+            </div>
+        </div>                        
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

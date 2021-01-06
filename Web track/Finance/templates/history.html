@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table>
+        <tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Transacted</th>
+        </tr>
+        {% for each in history%}
+            <tr>
+                <td>{{ each['symbol'] }}</td>
+                <td>{{ each['shares'] }}</td>
+                <td>{{ each['price'] }}</td>
+                <td>{{ each['datetime'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

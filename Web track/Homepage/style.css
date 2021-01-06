@@ -1,0 +1,125 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+
+  position: relative;
+  min-height: 100vh;
+  height: 100%;
+}
+.content-wrapper
+{
+  padding-bottom: 10rem;
+}
+/* CSS for nav tag -> navigation links */
+nav {
+  list-style-type: none;
+  background-color: grey;
+}
+nav li {
+  display: inline-block;
+  padding: 20px;
+}
+#about {
+  float: right;
+}
+nav .active a {
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+}
+
+nav li a {
+  text-decoration: none;
+  color: white;
+}
+nav li a:hover {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* end CSS for nav tag -> navigation links */
+/* CSS for index html body */
+.basic-info {
+  margin: 50px auto;
+  width: 50%;
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 10px 8px grey;
+}
+
+.basic-info h1 {
+  text-align: center;
+}
+
+.basic-info p {
+  font-size: larger;
+}
+.basic-info ul li {
+  font-size: large;
+  padding: 10px;
+}
+/* end */
+#index-hidden-wrapper
+{
+  visibility: hidden;
+  width: 50%;
+  margin: 0 auto;
+}
+#index-hidden-wrapper .card
+{
+  width: 50%;
+  margin: 0 auto;
+}
+/* CSS for button at index.html */
+.index-container-btn
+{
+  position: relative;
+  height: 80px;
+}
+.index-container-btn button
+{
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* end CSS for indexhtml body */
+
+/* css for footer */
+footer {
+  background-color: grey;
+  color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer ul {
+  padding: 0;
+  list-style-type: none;
+  /* padding: 10px; */
+}
+footer ul li {
+  float: left;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+  margin: auto;
+
+  background-color: grey;
+  padding: 20px;
+  color: whitesmoke;
+}
+
+footer ul li a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+footer ul li a:hover {
+  color: whitesmoke;
+}
+/* end css for footer */
